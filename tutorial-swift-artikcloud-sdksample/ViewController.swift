@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  tutorial-swift-artikcloud-sdksample
-//
-//  Created by Jonathan Paek on 9/20/16.
-//  Copyright © 2016 ARTIK Cloud. All rights reserved.
-//
 
 import UIKit
 import ArtikCloudSwift
