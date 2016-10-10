@@ -4,7 +4,7 @@ ARTIK Cloud sample sdk usage using swift.  The tutorial uses the [ARTIK Cloud Sw
 
 ### Prerequisites
 * xcode >= 7.3
-* artikcloud-swift (sdk)
+* artikcloud-swift v2.0.3 (sdk)
 
 ### Setup / Installation:
 
@@ -16,7 +16,6 @@ ARTIK Cloud sample sdk usage using swift.  The tutorial uses the [ARTIK Cloud Sw
 #### Setup SDK / Project
  -  Install ARTIK Cloud Swift SDK — [SDK Installation Instructions](https://github.com/artikcloud/artikcloud-swift)
 ```
-alternatively, this project is already setup for convenience.
 clone the ARTIK Cloud Swift SDK and place the cloned 'artikcloud-swift' into this project root.
 ```
  -  Prepare source files. Rename **Template_Config.swift** to **Config.swift** and rename classname from TemplateConfig to Config under /config/. Then copy the device ID and device token obtained before to Config.swift file.  The following is the example:
