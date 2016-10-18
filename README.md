@@ -12,6 +12,7 @@ This sample code sends and gets a message to and from ARTIK Cloud. It uses the [
  2. On the device dashboard, click to connect a new device. Select the Demo Fire Sensor (from cloud.artik.sample.demofiresensor) and name your sensor SampleFireSensor (or any name you'd like).
  3. Click the Settings icon of the device you just added. Get the **device ID** and **device token**. If the token does not already exist, click "GENERATE DEVICE TOKEN…" to get one.
  4. Install ARTIK Cloud Swift SDK by following [Installation](https://github.com/artikcloud/artikcloud-swift) instructions.
+ 5. Prepare source files. Under ./tutorial-swift-artikcloud-sdksample/, rename **Template_Config.swift** to **Config.swift** and rename the classname from TemplateConfig to Config. Copy the device ID and device token obtained before to Config.swift file.  The following is the example:
 ```swift
 public class Config {
     static let DEVICEID = "999aaabbbcccdddeeefffggg"
