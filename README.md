@@ -1,39 +1,65 @@
-# tutorial-swift-sdksample
+# ARTIK Cloud Swift SDK starter code
 
-ARTIK Cloud sample sdk usage using swift.  The tutorial uses the [ARTIK Cloud Swift SDK](https://github.com/artikcloud/artikcloud-swift).
+In this tutorial we will send and receieve a random temperature value to a sample temperature/fire sensorvice. It uses the [ARTIK Cloud Swift SDK](https://github.com/artikcloud/artikcloud-swift) to make REST API calls.
 
 ### Prerequisites
 * xcode >= 7.3
-* artikcloud-swift (sdk)
+* ARTIK Cloud Swift SDK
 
-### Setup / Installation:
+### **Introduction**
 
-#### Prepare Device:
- 1. Sign into [My ARTIK Cloud](https://artik.cloud/)
- 2. On the device dashboard, click to connect a new device. Select the Demo Fire Sensor (from cloud.artik.sample.demofiresensor) and name your sensor SampleFireSensor (or any name you'd like).
- 3. Go to Settings icon for the device you just added. Get the **device ID** and **device token**. If the token does not already exist, click "GENERATE DEVICE TOKEN…" to get one.
- 
-#### Setup SDK / Project
- -  Install ARTIK Cloud Swift SDK — [SDK Installation Instructions](https://github.com/artikcloud/artikcloud-swift)
+At the end of the lesson you'll:
+
+1. Familiarize with ARTIK Cloud dashboard to Create a Device.
+2. Use 'pod install' to import **ARTIK Cloud SDK for Swift**.
+4. Use the Messages API to read and write to your device.
+
+### **Prerequisites**
+
+- xcode
+
+### **Setup ARTIK Cloud Device and Application**
+
+We'll need to create an ARTIK Cloud device and application to continue.   The following recommendations below will get you started:
+
+**Create ARTIK Cloud Device:**
+
+1. Sign into [My ARTIK Cloud](https://artik.cloud/)
+2. [Connect a new device]("https://artik.cloud/my/devices") by selecting the Demo Fire Sensor (from cloud.artik.sample.demofiresensor) and name your sensor SampleFireSensor (or any name you'd like).
+3. Click the Settings icon of the device you just added. Get the **device id** and **device token**. If the token does not already exist, click "GENERATE DEVICE TOKEN…" to get one.  
+
+### **Project Installation and Setup**
+
+If you have not done so already, clone the sample application available on github:
+
 ```
-alternatively, this project is already setup for convenience.
-clone the ARTIK Cloud Swift SDK and place the cloned 'artikcloud-swift' into this project root.
+git clone https://github.com/artikcloud/tutorial-ios-yourFirstApp.git
 ```
- -  Prepare source files. Rename **Template_Config.swift** to **Config.swift** and rename classname from TemplateConfig to Config under /config/. Then copy the device ID and device token obtained before to Config.swift file.  The following is the example:
-```swift
-public class Config {
-    
-    static let DEVICEID = "yourdeviceid"
-    static let DEVICETOKEN = "yourdevicetoken"
-    
-    init(){ }
-    
-}
+
+Enter the parent directory and enter the following in the terminal to install the ARTIK Cloud Swift SDK
+
 ```
+pod install
+```
+
+Navigate to your project folder and open the file ending with xcworkspace which will launch xcode: 
+
+```
+navigate and open your .xcworkspace file
+```
+
+In the Xcode project, navigate to the Config.swift file and fill in your **DeviceId** and **Application ClientId** from earlier setup.
+
+```
+//Swift.config file
+static let DeviceId = "YourDeviceId"
+static let DeviceToken = "YourDeviceToken"
+```
+
 
 ## Run the code
-  - After completing setup steps, open the 'tutorial-swift-artikcloud-sdksample.xcworkspace' with xcode ide.
-  - Run the app in xcode by navigating to menu Product -> Run.   This will launch the iOS Simulator to run the app.
+  - Open the 'tutorial-swift-artikcloud-sdksample.xcworkspace' in Xcode IDE.
+  - Navigate to menu Product -> Run. This will launch the iOS Simulator to run the app.
 
 ### 1. Send a message 
 Click the Send Message button in the app.  This will send a random temperature value to ARTIK Cloud on behalf of the device. 
@@ -44,9 +70,7 @@ If everything goes well, you will receive a response with a message id (mid). AR
 ```
 
 ### 2. Get a message
-Click the Get Message button in the app
-
-Below is the response. It has a 'temp' value that was sent earlier.  Note also it has a matching 'mid' (message id)
+Click the Get Message button in the app to get the latest message. The response below has the 'temp' value that was sent earlier, and the matching 'mid' (message id).
 
 ```
 Optional("dt856e54302a294fba80414b87eb7b79a3"), 
@@ -82,7 +106,6 @@ message.sdid = Config.DEVICEID
 message.data!["temp"] = Int(arc4random_uniform(200))
 ```
 
-
 The two methods MessagesAPI.sendMessage(...) and MessagesAPI.getLastNormalizedMessages(...) are the part of the MessagesAPI. These are called respectively in the onSendMessage() and onGetMessage() UI handlers.
 
 ```swift
@@ -109,6 +132,8 @@ Select your device from the charts to view your device data in realtime.   Try s
 
 ## More examples
 
+Peek into [tests](https://github.com/artikcloud/artikcloud-swift/tree/master/ArtikCloudTests/ArtikCloudClientTests) in ARTIK Cloud Swift SDK for more SDK usage examples.
+
 More about ARTIK Cloud
 ---------------
 
@@ -123,7 +148,7 @@ To create and manage your services and devices on ARTIK Cloud, visit the Develop
 License and Copyright
 ---------------------
 
-Licensed under the Apache License. See [LICENSE](https://github.com/artikcloud/tutorial-swift-sdksample/blob/master/LICENSE).
+Licensed under the Apache License. See [LICENSE](LICENSE).
 
 Copyright (c) 2016 Samsung Electronics Co., Ltd.
 

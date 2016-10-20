@@ -13,7 +13,6 @@
 		442806691D91D5F800A451B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442806681D91D5F800A451B7 /* Assets.xcassets */; };
 		4428066C1D91D5F800A451B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4428066A1D91D5F800A451B7 /* LaunchScreen.storyboard */; };
 		44E7E1021D9B230200C6C809 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E7E1011D9B230200C6C809 /* Config.swift */; };
-		44E7E1051DA44DB500C6C809 /* Template_Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E7E1041DA44DB500C6C809 /* Template_Config.swift */; };
 		BE93D38DDB1235826F97F26E /* Pods_tutorial_swift_artikcloud_sdksample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193AD93338C4CC174259DCD8 /* Pods_tutorial_swift_artikcloud_sdksample.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		4428066B1D91D5F800A451B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4428066D1D91D5F800A451B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44E7E1011D9B230200C6C809 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		44E7E1041DA44DB500C6C809 /* Template_Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template_Config.swift; sourceTree = "<group>"; };
 		A21382B23B7791ACF17CF29D /* Pods-tutorial-swift-artikcloud-sdksample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorial-swift-artikcloud-sdksample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tutorial-swift-artikcloud-sdksample/Pods-tutorial-swift-artikcloud-sdksample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				44E7E1011D9B230200C6C809 /* Config.swift */,
-				44E7E1041DA44DB500C6C809 /* Template_Config.swift */,
 			);
 			name = config;
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 			files = (
 				44E7E1021D9B230200C6C809 /* Config.swift in Sources */,
 				442806641D91D5F800A451B7 /* ViewController.swift in Sources */,
-				44E7E1051DA44DB500C6C809 /* Template_Config.swift in Sources */,
 				442806621D91D5F800A451B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
