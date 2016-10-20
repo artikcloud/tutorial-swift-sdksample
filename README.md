@@ -2,17 +2,13 @@
 
 In this tutorial we will send and receieve a random temperature value to a sample temperature/fire sensorvice. It uses the [ARTIK Cloud Swift SDK](https://github.com/artikcloud/artikcloud-swift) to make REST API calls.
 
-### Prerequisites
-* xcode >= 7.3
-* ARTIK Cloud Swift SDK
-
 ### **Introduction**
 
 At the end of the lesson you'll:
 
 1. Familiarize with ARTIK Cloud dashboard to Create a Device.
 2. Use 'pod install' to import **ARTIK Cloud SDK for Swift**.
-4. Use the Messages API to read and write to your device.
+3. Use the Messages API to read and write to your device.
 
 ### **Prerequisites**
 
@@ -58,8 +54,8 @@ static let DeviceToken = "YourDeviceToken"
 
 
 ## Run the code
-  - Open the 'tutorial-swift-artikcloud-sdksample.xcworkspace' in Xcode IDE.
-  - Navigate to menu Product -> Run. This will launch the iOS Simulator to run the app.
+- Open the 'tutorial-swift-artikcloud-sdksample.xcworkspace' in Xcode IDE.
+- Navigate to menu Product -> Run. This will launch the iOS Simulator to run the app.
 
 ### 1. Send a message 
 Click the Send Message button in the app.  This will send a random temperature value to ARTIK Cloud on behalf of the device. 
