@@ -14,9 +14,9 @@ At the end of the lesson you'll:
 
 - xcode
 
-### **Setup ARTIK Cloud Device and Application**
+### **Setup Sample ARTIK Cloud Device**
 
-We'll need to create an ARTIK Cloud device and application to continue.   The following recommendations below will get you started:
+We'll need to create an ARTIK Cloud device.   The following will get you started:
 
 **Create ARTIK Cloud Device:**
 
@@ -44,7 +44,7 @@ Navigate to your project folder and open the file ending with xcworkspace which 
 navigate and open your .xcworkspace file
 ```
 
-In the Xcode project, navigate to the Config.swift file and fill in your **DeviceId** and **Application ClientId** from earlier setup.
+In the Xcode project, navigate to the Config.swift file and fill in your **Device Id** and **Device Token** from earlier setup.
 
 ```
 //Swift.config file
