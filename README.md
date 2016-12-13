@@ -30,7 +30,7 @@ We'll need to create an ARTIK Cloud device. The following will get you started:
 If you have not done so already, clone the sample application available on github:
 
 ```
-git clone https://github.com/artikcloud/tutorial-ios-yourFirstApp.git
+git clone https://github.com/artikcloud/tutorial-swift-sdksample.git
 ```
 
 Enter the parent directory and enter the following in the terminal to install the ARTIK Cloud Swift SDK
