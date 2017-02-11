@@ -1,5 +1,5 @@
 
-public class Config {
+open class Config {
     
     static let DEVICEID = "Your Device Id"
     static let DEVICETOKEN = "Your Device Token"

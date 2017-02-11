@@ -114,14 +114,14 @@ class ViewController: UIViewController {
 
     
     //sends a random value for device ARTIK Cloud
-    @IBAction func btnSendMessage(sender: AnyObject) {
+    @IBAction func btnSendMessage(_ sender: AnyObject) {
         
         onSendMessage()
         
     }
 
     //receive last sent message to ARTIK Cloud for the device
-    @IBAction func btnGetMessage(sender: AnyObject) {
+    @IBAction func btnGetMessage(_ sender: AnyObject) {
         
         onGetMessage()
     }
