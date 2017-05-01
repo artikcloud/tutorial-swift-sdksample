@@ -1,6 +1,6 @@
 
 import UIKit
-import ArtikCloudSwift
+import ArtikCloudSwift3
 
 
 class ViewController: UIViewController {
@@ -49,20 +49,20 @@ class ViewController: UIViewController {
         ]
         
         
+        
         //ARTIK Cloud API call which sends the message object.
         //returns response with 'mid', unique message identifier if successful.
-        MessagesAPI.sendMessage(data: message).then { response -> Void in
+        
+        MessagesAPI.sendMessage(data: message, completion: { response, error in
             
-  
-            let responseText:String = "Response:" + String("mid:", response.data?.mid)
+            if let errorMessage = error?.localizedDescription {
+                self.textOutput.text = errorMessage
+                return
+            }
             
-            self.textOutput.text = responseText;
+            self.textOutput.text = response?.data?.mid;
             
-            }.error { error -> Void in
-
-                self.textOutput.text = "Error Send Message: " + String(error)
-                
-        }
+        })
         
     }
     
@@ -77,38 +77,33 @@ class ViewController: UIViewController {
         
         //ARTIK Cloud API call which retrieves the last messages sent to the device
         //@sdids - list of source device id's
-    
-        MessagesAPI.getLastNormalizedMessages(sdids: sdid).then { response -> Void in
+        
+        MessagesAPI.getLastNormalizedMessages(sdids: "\(sdid)", completion: { response, error in
             
-            
-            let normalizedMessage = response.data! as [NormalizedMessage]
-            
-            // move along if no messages
-            if normalizedMessage.isEmpty == true {
-                
-                self.textOutput.text = "No messages"
+            if let errorMessage = error?.localizedDescription {
+                self.textOutput.text = "Got Error while caling getLastNormalizedMessage:" + errorMessage
                 return
-                
             }
             
-            // for simplicity we retrieve only the first message and output
-            // only a few member variables available in the NormalizedMessage object.
-            // @param data - contains the original data that was sent to the device earlier.
-            let responseObject:[String:AnyObject] = [
-                "mid": String(normalizedMessage[0].mid),
-                "ts": String(normalizedMessage[0].ts),
-                "sdtid": String(normalizedMessage[0].sdtid),
-                "data": String(normalizedMessage[0].data)
+            
+            let normalizedMessage = (response?.data)! as [NormalizedMessage]
+            
+            if normalizedMessage.isEmpty == true {
+                self.textOutput.text = "No messages"
+                return
+            }
+            
+            let responseObject:[String:Any] = [
+            
+                "mid": normalizedMessage[0].mid!,
+                "ts": normalizedMessage[0].ts!,
+                "sdtid": normalizedMessage[0].sdtid!,
+                "data": normalizedMessage[0].data!
             ]
             
             self.textOutput.text = responseObject.description
             
-            }.error { error -> Void in
-                
-                print(String(format: "%s", String(error)))
-                self.textOutput.text = "Get Message Error: " + String(error)
-                
-        }
+        })
         
     }
 
