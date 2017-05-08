@@ -1,4 +1,4 @@
-# ARTIK Cloud Swift SDK starter code
+# ARTIK Cloud Swift 3 SDK starter code
 
 In this tutorial we will send and receieve a random temperature value to a sample temperature/fire sensorvice. It uses the [ARTIK Cloud Swift SDK](https://github.com/artikcloud/artikcloud-swift) to make REST API calls.
 
@@ -12,8 +12,9 @@ At the end of the lesson you'll:
 
 ## **Prerequisites**
 
-- xcode
-- CocoaPods >= 0.36.0
+- xcode 8 or greater
+- pod 1.2.1 or greater
+- swift 3 or greater
 
 ### **Setup Sample ARTIK Cloud Device**
 
@@ -83,7 +84,7 @@ Take a closer look at the following files:
 Import the artikcloud package:
 
 ```swift
-import ArtikCloudSwift
+import ArtikCloudSwift3
 ```
 
 Setup credentials for your api call. Here we have used the device token to make our API calls.
